@@ -1,0 +1,56 @@
+.myBtn {
+color: rgb(255, 255, 255);
+background-color:rgb(169, 131, 203);
+padding: 10px;
+border-radius: 10px;
+letter-spacing: 2px;
+}
+
+.myBtn:hover {
+background-color: rgb(111, 35, 234);
+}
+
+body {
+  display: flex;              
+  justify-content: center;
+  margin: 0;
+  background-color: rgb(46, 210, 186);
+}
+
+.container {
+  display: flex;              /* aktivuje flexbox */
+  align-items: center;        /* vertikálně na střed */
+  flex-direction: column;    /* pokud chceš input a tlačítko nad sebou */
+  background-color: rgb(247, 214, 67); 
+  border-radius: 15px;   
+  gap: 20px; 
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* input, tlačítko a výsledky uvnitř main na střed */
+  justify-content: center;
+  width: 300px;
+  padding: 20px;
+  background-color: rgb(247, 214, 67);
+  border-radius: 15px;
+  gap: 10px;                 /* mezera mezi inputem a tlačítkem */
+}
+
+h1 {
+text-align: center;
+font-family: 'Times New Roman', Times, serif;
+color: black;
+}
+
+
+#search-text{
+padding: 5px;
+margin-top: 10px;
+}
+
+#search-text::placeholder{
+color: rgb(169, 131, 203);  
+text-align: center;
+}
