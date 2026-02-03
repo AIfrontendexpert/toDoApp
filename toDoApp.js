@@ -3,18 +3,23 @@
 const myToDo = [{
     text: "Vynést koš",
     completion: false,
+    number: 10
 },{
     text: "Uklidit",
     completion: false,
+    number: 5
 },{
     text: "Utřít prach",
     completion: false,
+    number: 1
 },{
     text: "Vysát",
     completion: true,
+    number: 1
 },{
     text: "Uvařit",
     completion: true,
+    number: 2
 }];
 
 
@@ -106,3 +111,72 @@ searchText.addEventListener("input", (event)=> {          //Připnutí nasloucha
     //Tady budeme volat filtrovací funkci
     renderToDos(myToDo,filters)
 })
+
+const myForm = document.querySelector("#formular")
+let count = 0 
+
+myForm.addEventListener("submit", (event)=>{
+    //vypnu výchozí chování formuláře
+    event.preventDefault()
+
+    //vytvořím odstavec do kterého se budou ukládat data zapsané do formuláře
+
+    const paragraph_6 = document.createElement("p")
+    paragraph_6.textContent = event.target.elements.addAktivita.value
+
+    document.querySelector("#from-form").appendChild(paragraph_6)
+
+    //po odelání vymažeme z políčka aktivitu
+
+    event.target.elements.addAktivita.value = ""
+
+    //count zvyšujeme o 1
+
+    count = count + 1
+
+    const input = document.createElement("input")
+    input.type = "checkbox"
+    input.id = `testovaci ${count}`
+    console.log(input)
+    
+    paragraph_6.prepend(input)
+    document.querySelector("#from-form").appendChild(paragraph_6)
+
+})
+
+
+const date_select = document.querySelector("#date_select")
+date_select.addEventListener("change",(event)=>{
+console.log(event.target.value)
+})
+
+//UKÁZKA LOCALSTORAGE
+/*LocalStorage ukládá pouze String, ale pokud použijeme tzv. vrátného JSON, tak ten nám převede cokoliv na string a uloží to do localStorage
+Když budeme něco z localStorage zase tahat ven, tak JSON to vezme a zase to změní na ten původní formát (čílo, objekt apod.)
+
+
+
+//Přidání položky do uložiště
+localStorage.setItem("first","Iva")
+
+
+//Update položky
+localStorage.setItem("first","Harry")
+
+//Získání položky
+console.log(localStorage.getItem("location"))
+
+//Smazání položky
+localStorage.removeItem("first")
+localStorage.removeItem("location")
+localStorage.clear()
+*/
+
+
+const myToDoJSON = JSON.stringify(myToDo)    // takto převádím objekt na string
+localStorage.setItem("myToDo",myToDoJSON)    //takto to ukládám do LocalStorage  
+
+const myToDoFromLS = localStorage.getItem("myToDo") //takto vezmu key z LacalStorage
+const myToDoFromJSON = JSON.parse(myToDoFromLS)     //takto převádím z LocalStorage zpět na objekt
+console.log(myToDo)
+

@@ -13,18 +13,32 @@
         </header>
 
         <main>
-            
-            <a href="#" class="myBtn">Tlačítko</a>
+
             <input type="text" id="search-text" placeholder="Hledaný text">
+            <!-- <input type="submit" class="myBtn" value="Najít"> -->     
+
+            <form id="formular">
+                <input type="text" placeholder="aktivita" id="aktivita" name="addAktivita" >
+                <input type="submit" class="pridatBtn" value="Přidat">
+            </form>
+            
+            <div id="from-form">
+            </div>
+
+
+            <select id="date_select">
+                <option value="" disabled selected hidden>Vyber datum</option>
+                <option value="Bude to vypisovat úkoly ve zvoleném datu 1">První datum</option>
+                <option value="Bude to vypisovat úkoly ve zvoleném datu 2">Druhé datum</option>
+                <option value ="Bude to vypisovat úkoly ve zvoleném datu 3">Třetí datum</option>
+            </select>
 
             <div id="toDo_left">
-
             </div>
 
             <div id="results">
-
             </div>
-        
+
         </main>
 
         <footer>

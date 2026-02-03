@@ -1,4 +1,4 @@
-.myBtn {
+/*.myBtn {
 color: rgb(255, 255, 255);
 background-color:rgb(169, 131, 203);
 padding: 10px;
@@ -8,7 +8,7 @@ letter-spacing: 2px;
 
 .myBtn:hover {
 background-color: rgb(111, 35, 234);
-}
+}*/
 
 body {
   display: flex;              
@@ -48,9 +48,50 @@ color: black;
 #search-text{
 padding: 5px;
 margin-top: 10px;
+border: none;
+border-bottom: 2px solid black;
+background: transparent;
+outline: none;
+
+
 }
 
 #search-text::placeholder{
 color: rgb(169, 131, 203);  
 text-align: center;
 }
+
+#aktivita {
+padding: 5px;
+margin-top: 10px;
+border: 2px solid black;
+border-radius: 5px 
+
+
+
+}
+
+#aktivita::placeholder{
+color: rgb(169, 131, 203);  
+text-align: center;
+}
+
+.pridatBtn{
+color: rgb(255, 255, 255);
+background-color:rgb(169, 131, 203);
+padding: 5px;
+border-radius: 10px;
+letter-spacing: 2px;  
+}
+
+.pridatBtn:hover{
+  background-color: rgb(111, 35, 234);
+}
+
+#date_select{
+padding: 2.5px;
+margin-top: 10px;
+border: 2px solid black;
+border-radius: 5px   
+}
+
